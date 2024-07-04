@@ -13,17 +13,16 @@ interface Shop {
 // Function that uses Hero and Shop interfaces
 function buyItem(hero: Hero, shop: Shop): Hero {
   if (hero.gold >= shop.price) {
-    // Create a new array of items with the new item added
+    
     const newItems = [...hero.items, shop.item];
 
-    // Return an updated Hero object
     return {
       ...hero,
       items: newItems,
       gold: hero.gold - shop.price
     };
   } else {
-    // If hero doesn't have enough gold, return the hero as-is
+    
     return hero;
   }
 }

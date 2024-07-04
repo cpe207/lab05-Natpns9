@@ -23,13 +23,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Function that uses Hero and Shop interfaces
 function buyItem(hero, shop) {
     if (hero.gold >= shop.price) {
-        // Create a new array of items with the new item added
         var newItems = __spreadArray(__spreadArray([], hero.items, true), [shop.item], false);
-        // Return an updated Hero object
         return __assign(__assign({}, hero), { items: newItems, gold: hero.gold - shop.price });
     }
     else {
-        // If hero doesn't have enough gold, return the hero as-is
         return hero;
     }
 }
