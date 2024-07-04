@@ -1,31 +1,31 @@
-// define interface for Student object
 interface Student {
   name: string;
   score: number;
 }
 
-// assign interface/type to the function definition properly
+// Function to find top names based on scores
 function findTopNames(students: Student[]): string[] {
- 
   let highestScore = Number.MIN_SAFE_INTEGER;
+  let topNames: string[] = [];
+
   students.forEach(student => {
     if (student.score > highestScore) {
       highestScore = student.score;
+      topNames = [student.name]; 
+    } else if (student.score === highestScore) {
+      topNames.push(student.name); 
     }
   });
-  const topStudents = students.filter(student => student.score === highestScore);
-  const topNames = topStudents.map(student => student.name);
 
   return topNames;
 }
 
-// assign interface/type to the student1 object properly
-const students1 = [
+const students1: Student[] = [
   { name: "john", score: 10 },
-  { name: "jane", score: 9 },
+  { name: "jane", score: 10 },
   { name: "jim", score: 8 },
 ];
 
-console.log(findTopNames(students1));
+console.log(findTopNames(students1)); 
 
-module.exports = findTopNames;
+export default findTopNames;

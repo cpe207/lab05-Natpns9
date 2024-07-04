@@ -1,20 +1,24 @@
-// assign interface/type to the function definition properly
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// Function to find top names based on scores
 function findTopNames(students) {
     var highestScore = Number.MIN_SAFE_INTEGER;
+    var topNames = [];
     students.forEach(function (student) {
         if (student.score > highestScore) {
             highestScore = student.score;
+            topNames = [student.name];
+        }
+        else if (student.score === highestScore) {
+            topNames.push(student.name);
         }
     });
-    var topStudents = students.filter(function (student) { return student.score === highestScore; });
-    var topNames = topStudents.map(function (student) { return student.name; });
     return topNames;
 }
-// assign interface/type to the student1 object properly
 var students1 = [
     { name: "john", score: 10 },
-    { name: "jane", score: 9 },
+    { name: "jane", score: 10 },
     { name: "jim", score: 8 },
 ];
 console.log(findTopNames(students1));
-module.exports = findTopNames;
+exports.default = findTopNames;
