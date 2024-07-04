@@ -1,9 +1,22 @@
 // define interface for Student object
-/* Your code here */
+interface Student {
+  name: string;
+  score: number;
+}
 
 // assign interface/type to the function definition properly
-function findTopNames(students) {
-  /* Your code here */
+function findTopNames(students: Student[]): string[] {
+ 
+  let highestScore = Number.MIN_SAFE_INTEGER;
+  students.forEach(student => {
+    if (student.score > highestScore) {
+      highestScore = student.score;
+    }
+  });
+  const topStudents = students.filter(student => student.score === highestScore);
+  const topNames = topStudents.map(student => student.name);
+
+  return topNames;
 }
 
 // assign interface/type to the student1 object properly
