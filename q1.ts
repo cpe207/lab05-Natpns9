@@ -17,6 +17,7 @@ interface Hero {
    return hero;
  }
  
+ 
 // Test cases with proper typing
 const hero1: Hero = {
   items: ["sword", "potion"],
