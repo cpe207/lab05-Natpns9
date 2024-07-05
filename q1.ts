@@ -1,32 +1,22 @@
-// Define interface for Hero object
 interface Hero {
-  items: string[];
-  gold: number;
-}
-
-// Define interface for Shop object
-interface Shop {
+  items: string[]; 
+  gold : number;
+ }
+ 
+ interface Shop {
   item: string;
   price: number;
-}
-
-// Function that uses Hero and Shop interfaces
-function buyItem(hero: Hero, shop: Shop): Hero {
-  if (hero.gold >= shop.price) {
-    
-    const newItems = [...hero.items, shop.item];
-
-    return {
-      ...hero,
-      items: newItems,
-      gold: hero.gold - shop.price
-    };
-  } else {
-    
-    return hero;
-  }
-}
-
+ }
+ 
+ // assign interface/type to the function definition properly
+ function buyItem(hero, shop) {
+   if(hero.gold>=shop.price) {
+     hero.items.push(shop.item);
+     hero.gold-=shop.price;
+   }
+   return hero;
+ }
+ 
 // Test cases with proper typing
 const hero1: Hero = {
   items: ["sword", "potion"],
