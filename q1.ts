@@ -2,8 +2,7 @@ interface Hero {
   items: string[]; 
   gold : number;
  }
- 
- 
+
  interface Shop {
   item: string;
   price: number;
