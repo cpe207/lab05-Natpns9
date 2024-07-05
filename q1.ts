@@ -3,6 +3,7 @@ interface Hero {
   gold : number;
  }
  
+ 
  interface Shop {
   item: string;
   price: number;
