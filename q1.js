@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // assign interface/type to the function definition properly
 function buyItem(hero, shop) {
     if (hero.gold >= shop.price) {
@@ -27,4 +25,4 @@ var shop2 = {
 };
 console.log(buyItem(hero1, shop1));
 console.log(buyItem(hero2, shop2));
-exports.default = buyItem;
+module.exports = buyItem;
